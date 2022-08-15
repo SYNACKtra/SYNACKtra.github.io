@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AUDIO</title>
+</head>
+<body>
+<script>
+window.i=0;
+function play() {
+  var aud = new Audio("AUDIO.MP3");
+//aud.pause();
+  aud.volume = 1.0;
+  aud.currentTime = 27;
+  aud.play();
+  setInterval(function() {
+    document.write(aud.currentTime+"&nbsp; ");
+if (window.i != ((10*30)+1)){window.i = window.i + 1;aud.currentTime = 27;}
+    if (aud.currentTime >= (3*60)){ aud.currentTime = 27; }
+  }, 100);
+}
+
+window.addEventListener("click", () => {
+  document.body.style.background = "black";
+  play();
+});
+</script
+</body>
+</html>
